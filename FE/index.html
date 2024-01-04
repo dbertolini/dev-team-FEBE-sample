@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOLA MUNDO AMIGO</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="backgroundRojo">
+    <h1 class="backgroundAzul">Hola mundo desde frontend</h1>
+    <p>Este es un ejemplo base</p>
+    <p>Otro texto</p>
+    <p>
+      Marca de auto: <b><span id="autito-marca"></span></b>
+    </p>
+    <p>
+      color: <b><span id="autito-color"></span></b>
+    </p>
+    <p>
+      nombre de modelo: <b><span id="autito-modelo"></span></b>
+    </p>
+
+    <script>
+      //aca va a ir el codigo de javascript
+      //alert("esta llegando al JS en el frontend");
+
+      // Hacer una llamada a la API en http://localhost:3002/api/auto
+      // y mostrar el resultado en el parrafo de marca de auto
+      fetch("http://localhost:3002/autos")
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          document.querySelector("#autito-marca").innerHTML = data.marca;
+          document.querySelector("#autito-color").innerHTML = data.modelo.color;
+          document.querySelector("#autito-modelo").innerHTML =
+            data.modelo.nombre;
+        });
+    </script>
+  </body>
+</html>

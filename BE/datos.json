@@ -1,0 +1,8 @@
+{
+  "marca": "ford",
+  "modelo": {
+    "color": "rojo",
+    "nombre": "fiesta",
+    "relojes": ["velocimetro", "tacometro", "nivel de aceite"]
+  }
+}
